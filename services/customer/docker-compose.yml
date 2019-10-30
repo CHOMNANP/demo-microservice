@@ -4,8 +4,7 @@ services:
   api:
     container_name: customer
     build:
-      context: .    
-    network_mode: "host"
+      context: .        
     volumes:
       # Mounts the project directory on the host to /app inside the container,
       # allowing you to modify the code without having to rebuild the image.
@@ -14,9 +13,9 @@ services:
       # Data present in the base image at the specified mount point will be copied
       # over to the new volume upon volume initialization.
       # node_modules from this new volume will be used and not from your local dev env.
-      - /app/node_modules/
-    # expose:
-    #   - "3001:3001"
+      - /app/node_modules/    
+    ports:
+      - "3001:3001"
     restart: "always"
 
     #Set environment variables from this file

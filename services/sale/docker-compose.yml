@@ -15,8 +15,8 @@ services:
       # over to the new volume upon volume initialization.
       # node_modules from this new volume will be used and not from your local dev env.
       - /app/node_modules/
-    # expose:
-    #   - "3002:3002"
+    ports:
+      - "3002:3002"
     restart: "always"
 
     #Set environment variables from this file
