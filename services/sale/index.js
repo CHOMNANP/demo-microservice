@@ -2,11 +2,11 @@ var express = require('express')
 var app = express()
 
 
-app.get('/', function (req, res) {
+app.get('/api', function (req, res) {
     res.send('Welcome to Sale module')
 })
 
-app.get('/api/sale', function (req, res) {
+app.get('/api/status', function (req, res) {
     res.send({
         sale: {
             id: 1,

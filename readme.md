@@ -1,9 +1,11 @@
 - git clone https://github.com/CHOMNANP/demo-microservice.git && cd demo-microservice
-- chmod +x kong.sh 
-- ./kong.sh 
 
-- cd services/customer && docker-compose up -d && cd ..
-- cd services/sale && docker-compose up -d
+
+- cd services/customer && docker-compose up -d --build
+- cd services/sale && docker-compose up -d  --build
 - docker ps
 
-Then configure Kong
+Kong
+- chmod +x kong.sh 
+- ./kong.sh 
+- connection http://kong:8001

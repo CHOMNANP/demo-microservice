@@ -27,11 +27,11 @@ docker run -d --name kong \
      -e "KONG_PROXY_ERROR_LOG=/dev/stderr" \
      -e "KONG_ADMIN_ERROR_LOG=/dev/stderr" \
      -e "KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl" \
-     -p 8000:8000 \
-     -p 4443:8443 \
+     -p 80:8000 \
+     -p 443:8443 \
      -p 8001:8001 \
      -p 8444:8444 \
      kong:1.1.2
 
 # Konga - Admin Panel of Kong
-docker run -p 1337:1337 -d --network="kong-net"  --name konga -e "NODE_ENV=production" -e "TOKEN_SECRET=secret_token" pantsel/konga
+docker run -p 1337:1337 -d --network="kong-net"  --name konga -e "NODE_ENV=production" -e "TOKEN_SECRET=secret_token" pantsel/konga:0.14.1
