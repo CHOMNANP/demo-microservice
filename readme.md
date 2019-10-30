@@ -4,5 +4,6 @@
 
 - cd services/customer && docker-compose up -d && cd ..
 - cd services/sale && docker-compose up -d
+- docker ps
 
 Then configure Kong

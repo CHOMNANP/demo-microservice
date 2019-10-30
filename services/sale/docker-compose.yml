@@ -5,7 +5,7 @@ services:
     container_name: sale
     build:
       context: .   
-    network_mode: "host" 
+    # network_mode: "host" 
     volumes:
       # Mounts the project directory on the host to /app inside the container,
       # allowing you to modify the code without having to rebuild the image.
